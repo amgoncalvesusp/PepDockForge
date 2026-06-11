@@ -1,0 +1,8 @@
+PySide6
+rdkit
+openmm
+openpyxl
+meeko
+gemmi
+scipy
+pyinstaller
