@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21178734.svg)](https://doi.org/10.5281/zenodo.21178734)
+
 # PepDock Forge
 
 PepDock Forge is a desktop application for peptide library construction, sequence-level triage, 3D peptide building, OpenMM minimization, and export for downstream molecular workflows.
