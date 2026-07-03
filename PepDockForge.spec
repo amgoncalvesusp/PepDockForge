@@ -1,15 +1,20 @@
 # -*- mode: python ; coding: utf-8 -*-
+import sys
+from pathlib import Path
+
 from PyInstaller.utils.hooks import collect_data_files
 from PyInstaller.utils.hooks import collect_dynamic_libs
 from PyInstaller.utils.hooks import collect_all
+
+ROOT = Path.cwd()
 
 datas = []
 binaries = []
 hiddenimports = ['rdkit', 'rdkit.Chem', 'rdkit.Chem.AllChem', 'openmm', 'openmm.app', 'openmm.unit']
 datas += [
-    ('assets\\pepdock_logo_lockup.png', 'assets'),
-    ('assets\\pepdock_app_icon.png', 'assets'),
-    ('assets\\pepdock_logo_mono.png', 'assets'),
+    (str(ROOT / 'assets' / 'pepdock_logo_lockup.png'), 'assets'),
+    (str(ROOT / 'assets' / 'pepdock_app_icon.png'), 'assets'),
+    (str(ROOT / 'assets' / 'pepdock_logo_mono.png'), 'assets'),
 ]
 datas += collect_data_files('rdkit')
 datas += collect_data_files('openmm')
@@ -20,8 +25,6 @@ datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 tmp_ret = collect_all('meeko')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 tmp_ret = collect_all('gemmi')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
-tmp_ret = collect_all('scipy')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
 conflicting_dlls = {
@@ -63,6 +66,10 @@ a.binaries = without_conflicting_dlls(a.binaries)
 a.datas = without_conflicting_dlls(a.datas)
 pyz = PYZ(a.pure)
 
+exe_kwargs = {}
+if sys.platform.startswith('win'):
+    exe_kwargs['icon'] = [str(ROOT / 'assets' / 'pepdock_forge.ico')]
+
 exe = EXE(
     pyz,
     a.scripts,
@@ -82,5 +89,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['assets\\pepdock_forge.ico'],
+    **exe_kwargs,
 )

@@ -16,14 +16,16 @@ PepDock Forge is a desktop application for peptide library construction, sequenc
 - Choose PDB record type: `ATOM` or `HETATM`.
 - Preview PDB structures in the desktop GUI.
 
-## Windows Release
+## Releases
 
-The packaged Windows build is distributed as a GitHub release asset:
+The active release version is `0.1.0`.
 
 - `PepDockForge-0.1.0-windows-x64.zip`
 - `PepDockForge.exe`
+- `PepDockForge-0.1.0-ubuntu-24.04-x86_64.tar.gz`
+- `PepDockForge`
 
-The executable is built with PyInstaller and bundles the Python runtime and required scientific dependencies.
+The executables are built with PyInstaller and bundle the Python runtime and required scientific dependencies. PyInstaller builds are platform-specific, so the Ubuntu asset must be built on Linux.
 
 ## Development
 
@@ -45,10 +47,22 @@ Run the built-in self-test:
 python pepdock_forge.py --self-test
 ```
 
-Build the Windows executable:
+Build the executable for the current platform:
 
 ```powershell
 python -m PyInstaller --noconfirm PepDockForge.spec
+```
+
+On Ubuntu 24.04, build and package the Linux release with:
+
+```bash
+python3 -m venv .venv-linux
+source .venv-linux/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+python pepdock_forge.py --self-test
+python -m PyInstaller --noconfirm PepDockForge.spec
+tar -C dist -czf dist/PepDockForge-0.1.0-ubuntu-24.04-x86_64.tar.gz PepDockForge
 ```
 
 ## Notes
