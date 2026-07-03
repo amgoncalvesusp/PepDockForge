@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use PepDock Forge, please cite it using these metadata."
+type: software
+title: "PepDock Forge"
+version: "0.1.1-doi"
+date-released: 2026-07-03
+authors:
+  - family-names: "Negrisoli"
+    given-names: "Bruna Flôres"
+    affiliation: "FMVZ-USP"
+  - family-names: "Periquito"
+    given-names: "Isabel Cristina Conceição"
+    affiliation: "FMVZ-USP"
+  - family-names: "Gonçalves"
+    given-names: "Adriano Marques"
+    affiliation: "UNIARA e FMVZ-USP"
+abstract: "Desktop application for peptide library construction, sequence-level triage, 3D peptide building, OpenMM minimization, and export for downstream molecular workflows."
+repository-code: "https://github.com/amgoncalvesusp/PepDockForge"

@@ -27,6 +27,12 @@ The active release version is `0.1.0`.
 
 The executables are built with PyInstaller and bundle the Python runtime and required scientific dependencies. PyInstaller builds are platform-specific, so the Ubuntu asset must be built on Linux.
 
+## Authors and Inventors
+
+- Bruna Flôres Negrisoli (FMVZ-USP)
+- Isabel Cristina Conceição Periquito (FMVZ-USP)
+- Adriano Marques Gonçalves (UNIARA e FMVZ-USP)
+
 ## Development
 
 Install dependencies in a Python 3.11 environment:

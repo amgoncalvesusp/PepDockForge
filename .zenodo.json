@@ -1,0 +1,29 @@
+{
+  "title": "PepDock Forge",
+  "upload_type": "software",
+  "description": "Desktop application for peptide library construction, sequence-level triage, 3D peptide building, OpenMM minimization, and export for downstream molecular workflows.",
+  "creators": [
+    {
+      "name": "Negrisoli, Bruna Flôres",
+      "affiliation": "FMVZ-USP"
+    },
+    {
+      "name": "Periquito, Isabel Cristina Conceição",
+      "affiliation": "FMVZ-USP"
+    },
+    {
+      "name": "Gonçalves, Adriano Marques",
+      "affiliation": "UNIARA e FMVZ-USP"
+    }
+  ],
+  "keywords": [
+    "peptides",
+    "molecular modeling",
+    "OpenMM",
+    "RDKit",
+    "docking preparation"
+  ],
+  "version": "0.1.1-doi",
+  "publication_date": "2026-07-03",
+  "access_right": "open"
+}
